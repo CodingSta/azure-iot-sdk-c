@@ -20,7 +20,9 @@ rm -r -f $build_folder
 mkdir -p $build_folder
 pushd $build_folder
 
-cmake .. -Drun_unittests:bool=ON -Drun_e2e_tests=ON -G Xcode
+#export DYLD_LIBRARY_PATH="/usr/local/Cellar/curl/7.61.0/lib:$DYLD_LIBRARY_PATH"
+
+cmake .. -Drun_e2e_tests=ON -G Xcode
 cmake --build . -- --jobs=$CORES
 ctest -j $TEST_JOB_COUNT -C "debug" -V
 popd

@@ -667,6 +667,7 @@ IOTHUB_ACCOUNT_INFO_HANDLE IoTHubAccount_Init_With_Config(IOTHUB_ACCOUNT_CONFIG*
             char* base64_cert;
             char* base64_key;
             char* tempThumb;
+            char* ld_lib_path;
             memset(iothub_account_info, 0, sizeof(IOTHUB_ACCOUNT_INFO));
 
             if ((iothub_account_info->sasDevices = (IOTHUB_PROVISIONED_DEVICE**)malloc(sizeof(IOTHUB_PROVISIONED_DEVICE*) * config->number_of_sas_devices)) == NULL)
@@ -692,7 +693,10 @@ IOTHUB_ACCOUNT_INFO_HANDLE IoTHubAccount_Init_With_Config(IOTHUB_ACCOUNT_CONFIG*
                 base64_cert = getenv("IOTHUB_E2E_X509_CERT_BASE64");
                 base64_key = getenv("IOTHUB_E2E_X509_PRIVATE_KEY_BASE64");
                 tempThumb = getenv("IOTHUB_E2E_X509_THUMBPRINT");
+                ld_lib_path = getenv("DYLD_LIBRARY_PATH");
 #endif
+
+                LogError("!!!!! DYLD_LIBRARY_PATH=[%s] !!!!!", ld_lib_path);
 
                 if (iothub_account_info->connString == NULL)
                 {
