@@ -48,7 +48,7 @@ Once the package is added to your project, you simply can use it's APIs followin
 <a name="mbed"></a>
 ## Using the mbed library
 
-For developers creating device applications on the [mbed](http://mbed.org) platform, we have published a library and samples that will get you started in minutes witH Azure IoT Hub. This library and the samples have been tested with the following boards:
+For developers creating device applications on the [mbed](http://mbed.org) platform, we have published a library and samples that will get you started in minutes with Azure IoT Hub. This library and the samples have been tested with the following boards:
 * Freescale FRDMK64-F
 * Renesas GR-PEACH
 * SADE.IO GSM Gateway
